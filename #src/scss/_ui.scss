@@ -1,0 +1,58 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::placeholder {
+}
+
+:-ms-input-placeholder {
+}
+
+::-ms-input-placeholder {
+}
+
+input:focus,
+button:focus,
+input,
+button {
+  outline: none;
+}
+
+label {
+  position: relative;
+  &::before,
+  &::after {
+    //transition: opacity 0.2s ease-in-out;
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+th,
+td {
+  border-collapse: collapse;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+._container {
+  max-width: 1020px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
