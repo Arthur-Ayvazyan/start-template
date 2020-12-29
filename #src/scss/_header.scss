@@ -1,0 +1,139 @@
+.header {
+  width: 100vw;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  @include md(padding-top, 0);
+  transition: padding 0.2s;
+  background: blue;
+}
+.nav {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 50px;
+  //width: 100vw;
+  left: 0;
+  top: 0;
+  background: red;
+  @include md-block {
+    &::before {
+      content: ("");
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 4;
+      height: 50px;
+      width: 100%;
+      background-color: red;
+    }
+  }
+}
+.burger {
+  position: relative;
+  z-index: 9999;
+  display: none;
+  width: 40px;
+  height: 40px;
+  transition: 0.2s;
+  position: relative;
+  cursor: pointer;
+  @include md-block() {
+    display: block;
+  }
+  //  // .burger_item
+  &_item {
+    position: absolute;
+    width: 100%;
+    width: calc(40px - 5px);
+    height: 2px;
+    background: #000;
+    border-radius: 5px;
+    top: 50%;
+    margin-top: -2px;
+    &:before,
+    &:after {
+      content: ("");
+      display: blocks;
+      position: absolute;
+      width: calc(100% - 5px);
+      width: 100%;
+      height: 2px;
+      background: #000;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    &::before {
+      transform: translateY(-8px);
+    }
+    &::after {
+      transform: translateY(8px);
+    }
+  }
+}
+.menu {
+  //background: red;
+  &__list {
+    background: green;
+    display: flex;
+    margin-left: -15px;
+    margin-right: -15px;
+    @include md-block() {
+      padding-top: 50px;
+      margin: 0;
+      position: fixed;
+      z-index: 2;
+      flex-direction: column;
+      top: 0;
+      left: -110%;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      transition: 0.4s;
+    }
+  }
+
+  &__item {
+    margin: 0 15px;
+    @include md-block() {
+      margin: 5px 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 10px 15px 10px 15px;
+    background-color: yellow;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    white-space: nowrap;
+    @include md-block() {
+      padding: 10px 0;
+      font-size: 22px;
+      text-align: center;
+    }
+  }
+}
+
+// addination classes
+.scroll-hidden {
+  overflow: hidden;
+}
+
+.menu__list.menu_active {
+  left: 0;
+}
+
+.burger_active span {
+  height: 0;
+}
+.burger_active span:before {
+  transform: rotate(-135deg);
+}
+.burger_active span:after {
+  transform: rotate(135deg);
+}

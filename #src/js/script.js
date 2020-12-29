@@ -24,12 +24,12 @@ window.onload = function () {
   //---------------------------------------------------------
 
 
-  // $('.burger').on('click', function(e){
-  //// e.preventDefault;
-  // 	$(this).toggleClass('burger_active');
-  // 	$('.menu').toggleClass('menu_active');
-  // 	$('body').toggleClass('scroll-hidden');
-  // });	
+  $('.burger').on('click', function (e) {
+    e.preventDefault;
+    $(this).toggleClass('burger_active');
+    $('.menu__list').toggleClass('menu_active');
+    $('body').toggleClass('scroll-hidden');
+  });
 
 
 
