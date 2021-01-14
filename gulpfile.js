@@ -182,6 +182,15 @@ function clean(params) {
 let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle);
 let watch = gulp.parallel(build, watchFiles, server);
 
+exports.fontsStyle = fontsStyle;
+exports.fonts = fonts;
+exports.images = images;
+exports.js = js;
+exports.css = css;
+exports.html = html;
+exports.build = build;
+exports.watch = watch;
+exports.default = watch;
 
 let smartgrid = require('smart-grid');
 let settings = {
@@ -221,12 +230,3 @@ let settings = {
 };
 
 gulp.task('grid', () => smartgrid('./#src/scss', settings));
-exports.fontsStyle = fontsStyle;
-exports.fonts = fonts;
-exports.images = images;
-exports.js = js;
-exports.css = css;
-exports.html = html;
-exports.build = build;
-exports.watch = watch;
-exports.default = watch;
